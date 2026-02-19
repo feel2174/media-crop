@@ -34,12 +34,12 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full max-w-7xl px-6 pt-12 pb-8 flex flex-col items-center">
-        <div className="text-center space-y-6 mb-16">
+      <section className="w-full max-w-7xl px-4 md:px-6 pt-8 md:pt-16 pb-8 flex flex-col items-center">
+        <div className="text-center space-y-6 mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 text-primary text-sm font-semibold mb-2"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 text-primary text-xs md:text-sm font-semibold mb-2"
           >
             <Sparkles className="w-4 h-4" />
             <span>Browser-based Media Editor</span>
@@ -49,9 +49,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight"
+            className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight px-2"
           >
-            Crop MP3 & MP4 <br />
+            Crop MP3 & MP4 <br className="hidden md:block" />
             <span className="gradient-text tracking-tighter">In Seconds.</span>
           </motion.h1>
 
@@ -59,16 +59,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4"
           >
             Professional grade tool to cut your media files directly in your browser.
             No uploads, no servers, maximum privacy.
           </motion.p>
         </div>
 
-        <div className="w-full max-w-4xl mx-auto min-h-[400px]">
+        <div className="w-full max-w-5xl mx-auto min-h-[400px]">
           {!selectedFile ? (
-            <div className="animate-in fade-in duration-500">
+            <div className="animate-in fade-in duration-500 px-2">
               <FileUploader onFileSelect={setSelectedFile} />
             </div>
           ) : (
