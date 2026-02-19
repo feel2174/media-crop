@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { FileUploader } from '@/components/FileUploader';
 import { MediaCropEditor } from '@/components/MediaCropEditor';
-import { AdSlot } from '@/components/AdSlot';
 import { Scissors, Shield, Zap, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -34,10 +33,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section & Top Ad */}
+      {/* Hero Section */}
       <section className="w-full max-w-7xl px-6 pt-12 pb-8 flex flex-col items-center">
-        <AdSlot className="mb-12 max-w-4xl mx-auto min-h-[90px]" label="Top Banner Ad" />
-
         <div className="text-center space-y-6 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,9 +82,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Side Ads & Features */}
+      {/* Features */}
       <section className="w-full max-w-7xl px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Feature 1 */}
           <div className="space-y-4 text-center lg:text-left">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto lg:mx-0">
@@ -110,16 +107,17 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 3 (Ad Slot) */}
-          <div className="flex flex-col gap-4">
-            <AdSlot label="Sidebar Ad" className="h-full min-h-[200px]" />
+          {/* Feature 3 */}
+          <div className="space-y-4 text-center lg:text-left">
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto lg:mx-0">
+              <Scissors className="text-primary w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold">Total Control</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Precisely select the segment you want to keep with frame-perfect accuracy. Simple and intuitive tools for everyone.
+            </p>
           </div>
         </div>
-      </section>
-
-      {/* Bottom Ad */}
-      <section className="w-full max-w-4xl px-6 pb-20">
-        <AdSlot label="Footer Ad" />
       </section>
 
       {/* Footer */}

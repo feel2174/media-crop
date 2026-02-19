@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://media-crop.zucca100.com", // Replace with actual domain
+    languages: {
+      'ko-KR': 'https://media-crop.zucca100.com',
+    }
   }
 };
 
@@ -45,10 +49,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        <Script
+          id="adsense-id"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9196149361612087"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body
