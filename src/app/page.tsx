@@ -5,13 +5,14 @@ import { FileUploader } from '@/components/FileUploader';
 import { MediaCropEditor } from '@/components/MediaCropEditor';
 import { Scissors, Shield, Zap, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AdSense from '@/components/AdSense';
 
 export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   return (
     <main className="min-h-screen flex flex-col items-center">
-      {/* Header/Navbar */}
+      {/* Header/Navbar ... */}
       <header className="w-full h-20 border-b border-border/50 glass sticky top-0 z-50">
         <div className="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
           <div className="flex items-center gap-2 group cursor-pointer">
@@ -66,6 +67,11 @@ export default function Home() {
           </motion.p>
         </div>
 
+        {/* Ad Space: Below Hero */}
+        <div className="w-full max-w-4xl mx-auto mb-12">
+          <AdSense adSlot="homepage_top" />
+        </div>
+
         <div className="w-full max-w-5xl mx-auto min-h-[400px]">
           {!selectedFile ? (
             <div className="animate-in fade-in duration-500 px-2">
@@ -82,6 +88,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Space: Middle */}
+      {!selectedFile && (
+        <div className="w-full max-w-4xl mx-auto py-8">
+          <AdSense adSlot="homepage_mid" />
+        </div>
+      )}
+
       {/* Features */}
       <section className="w-full max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -96,7 +109,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 2 */}
+          {/* Feature 2 ... */}
           <div className="space-y-4 text-center lg:text-left">
             <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto lg:mx-0">
               <Zap className="text-accent w-6 h-6" />
@@ -119,6 +132,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ad Space: Bottom */}
+      <div className="w-full max-w-4xl mx-auto pb-12">
+        <AdSense adSlot="homepage_bottom" />
+      </div>
 
       {/* Footer */}
       <footer className="w-full py-12 border-t border-border/50 glass">

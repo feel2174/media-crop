@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import AdSense from "@/components/AdSense";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,6 +62,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        {/* Mobile Sticky Footer Ad */}
+        <div className="fixed bottom-0 left-0 w-full z-50 md:hidden bg-background/80 backdrop-blur-md border-t border-white/10 safe-area-bottom">
+          <div className="max-w-[320px] mx-auto overflow-hidden">
+            <AdSense
+              adSlot="mobile_sticky_footer"
+              responsive="false"
+              style={{ margin: 0, minHeight: '50px', backgroundColor: 'transparent', border: 'none' }}
+            />
+          </div>
+        </div>
       </body>
     </html>
   );

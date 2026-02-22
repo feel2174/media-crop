@@ -7,6 +7,7 @@ import { Scissors, Play, Pause, Download, Loader2, CheckCircle2, RotateCcw, Aler
 import * as Slider from '@radix-ui/react-slider';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import AdSense from './AdSense';
 
 interface MediaCropEditorProps {
     file: File;
@@ -488,6 +489,11 @@ export function MediaCropEditor({ file, onReset }: MediaCropEditorProps) {
                                 </a>
                             </div>
 
+                            {/* Ad Placement 1: Between Download Button and Preview */}
+                            <div className="relative z-10 py-2">
+                                <AdSense adSlot="6655443322" adFormat="horizontal" />
+                            </div>
+
                             <div className="bg-black/95 rounded-[3rem] border-4 border-white/5 p-4 shadow-3xl overflow-hidden group/result relative aspect-video flex items-center justify-center">
                                 {isVideoFile ? (
                                     <video src={processedUrl} className="w-full h-full rounded-[2.5rem] object-contain" id="result-video" onClick={(e) => {
@@ -526,6 +532,11 @@ export function MediaCropEditor({ file, onReset }: MediaCropEditorProps) {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Ad Placement 2: Bottom of Result */}
+                            <div className="relative z-10 pt-2">
+                                <AdSense adSlot="9988776655" adFormat="auto" />
                             </div>
                         </div>
                     </motion.div>
