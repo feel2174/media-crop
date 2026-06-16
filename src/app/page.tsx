@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { FileUploader } from '@/components/FileUploader';
 import { MediaCropEditor } from '@/components/MediaCropEditor';
 import { Scissors, Shield, Zap, Sparkles } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import AdSense from '@/components/AdSense';
+import TaboolaPlacement from '@/components/TaboolaPlacement';
 
 export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -72,19 +73,35 @@ export default function Home() {
           <AdSense adSlot="homepage_top" />
         </div>
 
-        <div className="w-full max-w-5xl mx-auto min-h-[400px]">
-          {!selectedFile ? (
-            <div className="animate-in fade-in duration-500 px-2">
-              <FileUploader onFileSelect={setSelectedFile} />
-            </div>
-          ) : (
-            <div className="animate-in fade-in duration-500">
-              <MediaCropEditor
-                file={selectedFile}
-                onReset={() => setSelectedFile(null)}
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_320px] gap-8 items-start">
+          <div className="min-h-[400px]">
+            {!selectedFile ? (
+              <div className="animate-in fade-in duration-500 px-2">
+                <FileUploader onFileSelect={setSelectedFile} />
+              </div>
+            ) : (
+              <div className="animate-in fade-in duration-500">
+                <MediaCropEditor
+                  file={selectedFile}
+                  onReset={() => setSelectedFile(null)}
+                />
+              </div>
+            )}
+          </div>
+
+          <aside className="hidden xl:block sticky top-28">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
+                Recommended
+              </div>
+              <TaboolaPlacement
+                containerId="taboola-right-rail-thumbnails"
+                mode="thumbnails-rr"
+                placement="Right Rail Thumbnails"
+                className="min-h-[600px]"
               />
             </div>
-          )}
+          </aside>
         </div>
       </section>
 
@@ -130,6 +147,20 @@ export default function Home() {
               Precisely select the segment you want to keep with frame-perfect accuracy. Simple and intuitive tools for everyone.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full max-w-7xl px-6 pb-16">
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4 md:p-6">
+          <div className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
+            Discover More
+          </div>
+          <TaboolaPlacement
+            containerId="taboola-below-article-thumbnails"
+            mode="alternating-thumbnails-a"
+            placement="Below Article Thumbnails"
+            className="min-h-[240px]"
+          />
         </div>
       </section>
 
