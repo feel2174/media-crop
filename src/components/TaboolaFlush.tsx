@@ -1,12 +1,14 @@
-import Script from "next/script";
-
 export default function TaboolaFlush() {
   return (
-    <Script id="taboola-flush" strategy="afterInteractive">
-      {`
+    <script
+      id="taboola-flush"
+      type="text/javascript"
+      dangerouslySetInnerHTML={{
+        __html: `
         window._taboola = window._taboola || [];
-        window._taboola.push({ flush: true });
-      `}
-    </Script>
+        _taboola.push({flush: true});
+      `,
+      }}
+    />
   );
 }
