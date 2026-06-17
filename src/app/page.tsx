@@ -73,7 +73,7 @@ export default function Home() {
           <AdSense adSlot="homepage_top" />
         </div>
 
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_320px] gap-8 items-start">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8 items-start">
           <div className="min-h-[400px]">
             {!selectedFile ? (
               <div className="animate-in fade-in duration-500 px-2">
@@ -89,7 +89,7 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="hidden xl:block sticky top-28">
+          <aside className="hidden lg:block sticky top-28">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-4">
               <div className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
                 Recommended
