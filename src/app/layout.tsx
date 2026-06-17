@@ -51,14 +51,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script id="taboola-loader" strategy="beforeInteractive">
-          {`
+        <script
+          id="taboola-loader"
+          dangerouslySetInnerHTML={{
+            __html: `
             (function () {
               var PUBLISHER_ID = 'zucca-network';
               var PAGE_TYPE = 'article';
 
               var LOADER_URL = '//cdn.taboola.com/libtrc/' + PUBLISHER_ID + '/loader.js';
-              var LOADER_PRIVACY_URL = '//static.btloader.com/tag?o=' + PUBLISHER_ID + '/loader/privacys.js';
+              var LOADER_PRIVACY_URL = '//static.tblcontent.com/libtrc/' + PUBLISHER_ID + '/loader.privacy.js';
               var PIXEL_URL = 'https://static.qovani.com/libtrc/t5?type=pixel&publisher=' + PUBLISHER_ID;
               var SCRIPT_ID = 'tb_loader_script';
 
@@ -93,8 +95,9 @@ export default function RootLayout({
                 window.performance.mark('tbl_ic');
               }
             })();
-          `}
-        </Script>
+          `,
+          }}
+        />
         <Script
           id="adsense-id"
           async
