@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://media-crop.zucca100.com"),
   title: "MediaCrop Pro - Free MP3 & MP4 Online Cropper",
   description: "High-quality MP3 and MP4 cropper in your browser. No server uploads, total privacy, and blazing fast processing.",
   keywords: ["mp3 cropper", "mp4 cutter", "music editor", "video trimmer", "online media cropper", "free audio editor", "privacy first editor"],
